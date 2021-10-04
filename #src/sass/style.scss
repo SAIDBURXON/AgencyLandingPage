@@ -1,0 +1,57 @@
+@import url(fonts.min.css);
+@import url(header.min.css);
+@import url(footer.min.css);
+
+$fontFamily: "Gordita" ;
+$fontSize: 16px ;
+$minWidth: 320px ;
+$maxWidth: 1440px ;
+$maxWidthContainer:1300px;
+$bp1: $maxWidthContainer + 12;
+$bp2: 1200px;
+$bp3: 991.98px;
+$bp4: 767.98px;
+$bp5: 479.98px;
+$bp6: 375.98px;
+// $mainColor: ;
+
+@mixin adaptiv-value($property, $startSize, $minSize, $type) {
+    $addSize : $startSize - $minSize;
+    @if $type == 1 {
+        // Только если меньше контейнера
+        #{$property}: $startSize + px;
+        @media (max-width: #{$maxWidthContainer + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+        }
+    } @else if $type == 2 {
+        // Только если больше контейнера
+        #{$property}: $startSize + px;
+        @media (max-width: #{$maxWidthContainer + px}) {
+            #{property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+        }
+    } @else{
+        // Всегда
+        #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+    }
+}
+
+*,
+*::before,
+*::after{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $fontFamily;
+}
+
+
+
+
+// .footer{
+//     &__container{
+//         @extend .header__container;
+//         background-color: green;
+//     }
+// }
