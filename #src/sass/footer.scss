@@ -1,15 +1,15 @@
 $fontFamily: "Gordita" ;
 $fontSize: 16px ;
-$minWidth: 320px ;
-$maxWidth: 1440px ;
-$maxWidthContainer:1300px;
+$minWidth: 320 ;
+$maxWidth: 1440 ;
+$maxWidthContainer:1300;
 $bp1: $maxWidthContainer + 12;
-$bp2: 1200px;
-$bp3: 991.98px;
-$bp4: 767.98px;
-$bp5: 479.98px;
-$bp6: 375.98px;
-// $mainColor: ;
+$bp2: 1200;
+$bp3: 991.98;
+$bp4: 767.98;
+$bp5: 479.98;
+$bp6: 375.98;
+$mainColor: #14213D;
 
 @mixin adaptiv-value($property, $startSize, $minSize, $type) {
     $addSize : $startSize - $minSize;
@@ -40,4 +40,228 @@ $bp6: 375.98px;
     padding: 0;
     box-sizing: border-box;
     font-family: $fontFamily;
+    color: $mainColor;
+
+}
+
+
+.footer {
+    width: 100%;
+    color: $mainColor;
+    margin-top: 50px;
+    & span{
+        display: inline-block;
+        position: absolute;
+    }
+	&__container {
+        max-width: $maxWidthContainer + px;
+        margin: 0 auto;
+        padding: 0 20px;
+     }
+	&__body { 
+
+        position: relative;
+    }
+	&__inner {
+        width: 100%;
+        background: no-repeat url(../img/image1.png) center center;
+        background-size: cover;
+        border-radius: 30px;
+        overflow: hidden;
+        position: relative;
+        padding: 78px 29px 39px 29px;
+     }
+	&__block { 
+        width: clamp(250px, 100%, 1051px);
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        z-index: 100;
+        &:first-child{
+            margin-bottom: 126px;
+        }
+        @media (max-width: $bp4 + px) {
+            flex-direction: column;
+            &:first-child{
+                margin-bottom: 70px;
+            }
+        } 
+    }
+    &__logo-block{
+        width: 100%;
+        @media (max-width: $bp4 + px) {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        @media (max-width: $bp5 + px) {
+            display: block;
+        } 
+    }
+
+	&__logo {
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        background-color: #fff;
+        position: relative;
+        margin: 0 0 40px 0;
+        @media (max-width: $bp4 + px) {
+            margin: 0 40px 0 0;
+        }
+        @media (max-width: $bp5 + px) {
+            margin: 0 0 25px 0;
+        } 
+        &::before{
+            content: '';
+            display: block;
+            width: 50px;
+            height: 25px;
+            border-radius: 50% / 0 0 100% 100%; 
+            background-color: #14213d;
+            position: absolute;
+            top: 34%;
+            left: 50%;
+        }
+    }
+    &__text { 
+        display: flex;
+        flex-direction: column;
+        font-size: 18px;
+        @media (max-width: $bp4 + px) {
+            margin-bottom: 30px;
+        } 
+    }
+	&__blockquote { 
+        line-height: 20px;
+        margin-bottom: 26px;
+        @media (max-width: $bp4 + px) {
+            margin-bottom: 0px;
+        } 
+    }
+	&__info { 
+        display: inline-block;
+        width: 175px;
+        line-height: 26px;
+    }
+	&__menu { 
+
+    }
+	&__copyright {
+
+    }
+    &__square-dot { 
+        width: 80px;
+        height: 80px;
+        background-image: radial-gradient($mainColor 35%, transparent 35%);
+        background-color: transparent;
+        background-position: 10px 10px , 70px 70px;
+        background-size: 15px 15px;
+        top: 68%;
+        left: -40px;
+        @media (max-width: $bp4 + px) {
+            opacity: 0;
+            } 
+        }
+    &__square-wt { 
+        width: 80px;
+        height: 80px;
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.5);
+        top: 70px;
+        right: 54px;
+        @media (max-width: $bp4 + px) {
+            width: 70px;
+            height: 70px;
+            top: 65px;
+            right: 40px;
+        } 
+        @media (max-width: $bp5 + px) {
+            width: 65px;
+            height: 65px;
+        } 
+    }
+    &__square-dk {
+        width: 80px;
+        height: 80px;
+        background-color: $mainColor;
+        border-radius: 20px;
+        top: 75%;
+        right: 170px;
+        @media (max-width: $bp4 + px) {
+            top: 80%;
+            right: 140px;
+            background-color:rgba(255, 255, 255, 0.5) ;
+        } 
+        @media (max-width: $bp5 + px) {
+            width: 65px;
+            height: 65px;
+            top: 85%;
+            right: 150px;
+            background-color:rgba(255, 255, 255, 0.5) ;
+        } 
+     }
+    &__square-tr{
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+        background-color: transparent;
+        border-radius: 20px;
+        top: 64%;
+        right: -2px;
+        @media (max-width: $bp4 + px) {
+            width: 180px;
+            height: 180px;
+            top: 75%;
+        } 
+        @media (max-width: $bp5 + px) {
+            width: 180px;
+            height: 180px;
+            top: 80%;
+        } 
+    }
+    &__circle-dot {
+        width: 100px;
+        height: 100px;
+        background-image: radial-gradient($mainColor 35%, transparent 35%);
+        background-color: transparent;
+        background-position: 10px 10px , 70px 70px;
+        background-size: 15px 15px;
+        top: 80px;
+        right: 0;
+        border-radius: 50%;
+        @media (max-width: $bp4 + px) {
+            width: 70px;
+            height: 70px;
+        } 
+        @media (max-width: $bp5 + px) {
+            width: 70px;
+            height: 70px;
+        } 
+     }
+}
+.menu-footer {
+    display: flex;
+    font-size: 20px;
+    @media (max-width: $bp6 + px) {
+        flex-direction: column;
+    } 
+	&__list { 
+        &:first-child{
+            @include adaptiv-value("margin-right", 65, 10, 1);
+        }
+        li:not(:last-child){
+            margin-bottom: 20px;
+        }
+        @media (max-width: $bp6 + px) {
+            &:not(&:last-child){
+                margin-bottom: 25px;
+            }
+        } 
+    }
+	&__header { 
+        font-weight: 700;
+    }
+	&__item {
+    }
 }
