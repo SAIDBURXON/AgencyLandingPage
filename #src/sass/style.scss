@@ -1,19 +1,21 @@
 @import url(fonts.min.css);
-@import url(header.min.css);
+@import url(header.css);
 @import url(footer.min.css);
 
 $fontFamily: "Gordita" ;
-$fontSize: 16px ;
-$minWidth: 320px ;
-$maxWidth: 1440px ;
-$maxWidthContainer:1300px;
+$fontSize: 16px;
+$minWidth: 320 ;
+$maxWidth: 1440 ;
+$maxWidthContainer:1300;
 $bp1: $maxWidthContainer + 12;
-$bp2: 1200px;
-$bp3: 991.98px;
-$bp4: 767.98px;
-$bp5: 479.98px;
-$bp6: 375.98px;
-// $mainColor: ;
+$bp2: 1200;
+$bp3: 991.98;
+$bp4: 767.98;
+$bp5: 479.98;
+$bp6: 375.98;
+$mainColor: #303948;
+$secondColor:#59616D;
+$blueColor:#14213D;
 
 @mixin adaptiv-value($property, $startSize, $minSize, $type) {
     $addSize : $startSize - $minSize;
@@ -46,12 +48,44 @@ $bp6: 375.98px;
     font-family: $fontFamily;
 }
 
+.main {
+    width: 100%;
+	&__container { 
+        max-width: $maxWidthContainer + px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+	&__services { }
+	&__process { }
+	&__product { }
+	&__testimonials { }
+}
+.client {
+    margin-top: 254px;
+    padding: 79px 0px 43px 0px;
+    text-align: center;
+	&__title { 
+        font-size: 36px;
+        font-weight: 500;
+        margin-bottom: 35px;
+    }
+	&__blockquote {
+        font-size: 18px;
+        color: $mainColor;
+        margin-bottom: 59px;
 
+     }
+	&__platforms {
+        img:not(:last-child){
+            margin: 0 27px 0 0;
+            @media (max-width: $bp6 + px) {
+                margin: 0 20px 30px 20px;
+            } 
+        }
+     }
+}
+.services { }
+.process { }
+.product { }
+.testimonials { }
 
-
-// .footer{
-//     &__container{
-//         @extend .header__container;
-//         background-color: green;
-//     }
-// }

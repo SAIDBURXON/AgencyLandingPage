@@ -48,7 +48,7 @@ $mainColor: #14213D;
 .footer {
     width: 100%;
     color: $mainColor;
-    margin-top: 50px;
+    margin-bottom: 45px;
     & span{
         display: inline-block;
         position: absolute;
@@ -155,8 +155,8 @@ $mainColor: #14213D;
         height: 80px;
         background-image: radial-gradient($mainColor 35%, transparent 35%);
         background-color: transparent;
-        background-position: 10px 10px , 70px 70px;
-        background-size: 15px 15px;
+        background-position: 0px 0px , 70px 70px;
+        background-size: 14.2px 14px;
         top: 68%;
         left: -40px;
         @media (max-width: $bp4 + px) {

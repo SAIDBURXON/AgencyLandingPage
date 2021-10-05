@@ -9,11 +9,29 @@
     <link rel="icon" href="#">
 </head>
 <body>
-    <!-- @@include('header.html', {}) -->
-
-
-    @@include('footer.html',{})
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <div class="wrapper">
+        <!-- @@include('header.html', {}) -->
+        <main class="main">
+            <div class="main__container">
+                <div class="main__body">
+                    <div class="main__client client">
+                        <h1 class="client__title">Client</h1>
+                        <p class="client__blockquote">Using Our Experience To Make Your Digital Experience Brighter</p>
+                        <div class="client__platforms">
+                            <img src="img/Mircrosoft.png" alt="">
+                            <img src="img/google.png" alt="">
+                            <img src="img/amazon.png" alt="">
+                        </div>
+                    </div>
+                    <div class="main__services services"></div>
+                    <div class="main__process process"></div>
+                    <div class="main__product product"></div>
+                    <div class="main__testimonials testimonials"></div>
+                </div>
+            </div>
+        </main>
+        @@include('footer.html',{})
+    </div>
     <script src="js/script.js"></script>
 </body>
 </html>

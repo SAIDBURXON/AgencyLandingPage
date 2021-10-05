@@ -1,14 +1,14 @@
 $fontFamily: "Gordita" ;
 $fontSize: 16px ;
-$minWidth: 320px ;
-$maxWidth: 1440px ;
-$maxWidthContainer:1300px;
+$minWidth: 320p;
+$maxWidth: 1440p;
+$maxWidthContainer:1300;
 $bp1: $maxWidthContainer + 12;
-$bp2: 1200px;
-$bp3: 991.98px;
-$bp4: 767.98px;
-$bp5: 479.98px;
-$bp6: 375.98px;
+$bp2: 1200;
+$bp3: 991.98;
+$bp4: 767.98;
+$bp5: 479.98;
+$bp6: 375.98;
 // $mainColor: ;
 
 @mixin adaptiv-value($property, $startSize, $minSize, $type) {
@@ -51,9 +51,7 @@ $bp6: 375.98px;
     }
 	&__body { 
         width: 100%;
-        padding: 54px 0 32px 0;
         @media (max-width: $bp4 + px) {
-            padding: 10px 0 32px 0;
         } 
     }
 	&__navbar { 
@@ -97,17 +95,14 @@ $bp6: 375.98px;
     
 }
 .navbar {
-	// &__logo { 
-
-    // }
     &__menu{
         display: flex;
         align-items: center;
     }
 }
 .logo-navbar {
-    @include adaptiv-value("width", 50 , 30, 1);
-    @include adaptiv-value("height", 50 , 30, 1);
+    width: 50px;
+    height: 50px;
 	&__square {
         display: inline-block;
         width: 100%;
@@ -117,8 +112,8 @@ $bp6: 375.98px;
         &::before{
             content: '';
             display: block;
-            @include adaptiv-value("width", 50 , 30, 1);
-            @include adaptiv-value("height", 25 , 12.5, 1);
+            width: 50px;
+            height: 25px;
             border-radius: 50% / 0 0 100% 100%; 
             background-color: #14213d;
             position: absolute;
