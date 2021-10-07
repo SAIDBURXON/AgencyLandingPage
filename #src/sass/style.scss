@@ -3,7 +3,7 @@
 @import url(footer.min.css);
 
 $fontFamily: "Gordita" ;
-$fontSize: 16px;
+$fontSize: 18px;
 $minWidth: 320 ;
 $maxWidth: 1440 ;
 $maxWidthContainer:1300;
@@ -14,7 +14,7 @@ $bp4: 767.98;
 $bp5: 479.98;
 $bp6: 375.98;
 $mainColor: #303948;
-$secondColor:#59616D;
+$grayColor:#59616D;
 $blueColor:#14213D;
 
 @mixin adaptiv-value($property, $startSize, $minSize, $type) {
@@ -46,6 +46,7 @@ $blueColor:#14213D;
     padding: 0;
     box-sizing: border-box;
     font-family: $fontFamily;
+    font-size: $fontSize;
 }
 
 .main {
@@ -68,6 +69,7 @@ $blueColor:#14213D;
         font-size: 36px;
         font-weight: 500;
         margin-bottom: 35px;
+        color: $blueColor;
     }
 	&__blockquote {
         font-size: 18px;
@@ -84,7 +86,96 @@ $blueColor:#14213D;
         }
      }
 }
-.services { }
+.services {
+    margin-top: 70px;
+    display: grid;
+    grid-template-areas: 
+    "picture header header"
+    "picture web design"
+    "picture seo security";
+    @include adaptiv-value("column-gap", 80, 0 , 1);
+    @include adaptiv-value("row-gap", 60, 0 , 1);
+    &__picblock { 
+        grid-area: picture;
+        @include adaptiv-value("margin-right", 40, 0 , 1);
+        position: relative;
+        img {
+            border-radius: 35px;
+            box-shadow: 33px 46px 0px 0px rgba(65, 21, 21, 0.15), 0px 25px 50px 0px rgba(0, 0, 0, 0.15);
+        }
+        &::before{
+            content: '';
+            display: block;
+            width: 186px;
+            height: 186px;
+            background-image: radial-gradient($blueColor 35%, transparent 35%);
+            background-color: transparent;
+            background-position: center center , 60px 60px;
+            background-size: 14px 14px;
+            position: absolute;
+            top: -52px;
+            right: -77px;
+        }
+        &::after{
+            content: '';
+            display: block;
+            width: 150px;
+            height: 150px;
+            background-color: #FCA311;
+            border-radius: 50%;
+            position: absolute;
+            top: 44%;
+            left: -72px;
+        }
+    }
+    &__header {
+        grid-area: header;
+        margin-top: 20px;
+    }
+	&__blockquote {
+        color: $mainColor;
+        margin-bottom: 30px;
+     }
+	&__title { 
+        line-height: 38px;
+        margin-bottom: 30px;
+        font-size: 36px;
+        font-weight: 500;
+    }
+	&__text {
+        font-weight: $grayColor;
+     }
+}
+.specialties {
+    &:nth-child(1){
+        grid-area: web;
+    }
+    &:nth-child(2){
+        grid-area: design;
+    }
+    &:nth-child(3){
+        grid-area: seo;
+    }
+    &:nth-child(4){
+        grid-area: security;
+    }
+	&__block { 
+        display: flex;
+        align-items: center;
+        &:not(:last-child){
+            margin-bottom: 23px;
+        }
+    }
+	&__pic { 
+        margin-right: 20px;
+    }
+	&__name { 
+
+    }
+	&__text { 
+
+    }
+}
 .process { }
 .product { }
 .testimonials { }

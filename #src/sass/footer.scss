@@ -9,7 +9,7 @@ $bp3: 991.98;
 $bp4: 767.98;
 $bp5: 479.98;
 $bp6: 375.98;
-$mainColor: #14213D;
+$blueColor: #14213D;
 
 @mixin adaptiv-value($property, $startSize, $minSize, $type) {
     $addSize : $startSize - $minSize;
@@ -40,14 +40,13 @@ $mainColor: #14213D;
     padding: 0;
     box-sizing: border-box;
     font-family: $fontFamily;
-    color: $mainColor;
-
+    color: $blueColor;
 }
 
 
 .footer {
     width: 100%;
-    color: $mainColor;
+    color: $blueColor;
     margin-bottom: 45px;
     & span{
         display: inline-block;
@@ -153,7 +152,7 @@ $mainColor: #14213D;
     &__square-dot { 
         width: 80px;
         height: 80px;
-        background-image: radial-gradient($mainColor 35%, transparent 35%);
+        background-image: radial-gradient($blueColor 35%, transparent 35%);
         background-color: transparent;
         background-position: 0px 0px , 70px 70px;
         background-size: 14.2px 14px;
@@ -184,7 +183,7 @@ $mainColor: #14213D;
     &__square-dk {
         width: 80px;
         height: 80px;
-        background-color: $mainColor;
+        background-color: $blueColor;
         border-radius: 20px;
         top: 75%;
         right: 170px;
@@ -223,7 +222,7 @@ $mainColor: #14213D;
     &__circle-dot {
         width: 100px;
         height: 100px;
-        background-image: radial-gradient($mainColor 35%, transparent 35%);
+        background-image: radial-gradient($blueColor 35%, transparent 35%);
         background-color: transparent;
         background-position: 10px 10px , 70px 70px;
         background-size: 15px 15px;
