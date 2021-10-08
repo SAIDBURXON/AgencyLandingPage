@@ -61,6 +61,93 @@ $blueColor:#14213D;
 	&__product { }
 	&__testimonials { }
 }
+.intro{
+    .title{
+        font-weight: 400;
+        font-size: 36px;
+    }
+    &__title{
+        color: white;
+        font-weight: 700;
+        margin-bottom: 40px;
+        font-size: 50px;
+        @media (max-width: $bp3 + px){
+            font-size: 35px;
+        }
+    }
+    &__text{
+        color: white;
+        font-size: 18px;
+        margin-bottom: 45px;
+        @media (max-width: $bp3 + px){
+            font-size: 14px;
+        }
+    }
+    
+    &__image{
+        height: 100%;
+        img{
+            height: 100%;
+        }
+        @media (max-width: $bp3 + px){
+            
+        }
+    }
+    &__experience{
+        padding: 105px 45px;
+        border-radius: 35px;
+        position: absolute;
+        margin-left: 110px;
+        // border: 1px solid red;
+        width: clamp(270px, 100%, 1039px);
+        height: 326px;
+        background-image: url("../img/Vector.png");
+        background-color: #14213d;
+        color: #fff !important;
+        &__inner{
+           
+        }
+    } 
+    &__arrow{
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: flex-end;
+        &__a{
+            margin-bottom: 10px;
+        }
+    }
+    &__portfolio{
+        border-radius: 35px;
+        width: clamp(270px, 100%, 1260px);
+        height: 707px;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        // border: 1px solid red;
+        background-size: 100% 100%;
+        background: no-repeat url("../img/Background.png");  
+        position: relative;  
+    }
+    &__info{
+
+        // border: 1px solid red;
+        color: white !important;
+        margin-left: 76px;
+        width: 471px;
+        height: fit-content;
+        // border: 1px solid red;
+    }
+    &__btn{
+        color: #303948;
+        width: 264px;
+        height: 67px;
+        background-color: #fff;
+        border-radius: 35px;
+        font-family: 'Gordita';
+    }
+}
+
 .client {
     margin-top: 254px;
     padding: 79px 0px 43px 0px;
