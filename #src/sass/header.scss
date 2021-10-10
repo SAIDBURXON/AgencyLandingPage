@@ -41,11 +41,10 @@ $bp6: 375.98;
     box-sizing: border-box;
     font-family: $fontFamily;
 }
-
 .header {
     width: 100%;
 	&__container { 
-        max-width: $maxWidthContainer;
+        max-width: $maxWidthContainer + px;
         margin: 0 auto;
         padding: 0 20px;
     }
@@ -62,43 +61,16 @@ $bp6: 375.98;
         align-items: center;
         padding: 18px 14px;
     }
-    &__portfolio{
-        width: clamp(270px, 100%, 1260px);
-        height: 707px;
-        border: 1px solid red;
-        background: no-repeat url("../img/Background.png");    
-    }
-    &__image{        
-    }
-    &__info{
-        color: white;
-        width: 470px;
-        
-        h1{
-            font-weight: 700;
-            margin-bottom: 40px;
-            font-size: 50px;
-        }
-        p{
-            margin-bottom: 45px;
-        }
-    }
-    &__button{
-        color: #303948;
-        width: 264px;
-        height: 67px;
-        background-color: #fff;
-        border-radius: 35px;
-        font-family: 'Gordita';
-    }
-
-    
+      
 }
+
 .navbar {
     &__menu{
         display: flex;
         align-items: center;
+        justify-content: space-between;
     }
+    
 }
 .logo-navbar {
     width: 50px;
@@ -122,3 +94,62 @@ $bp6: 375.98;
         }
     }
 }
+.menu{
+    &__list{
+        font-weight: 700;
+        width: 372px;
+        height: 23px;
+        // border: 1px solid red;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 16px;
+        @media (max-width: $bp4 + px){
+            justify-content: center;
+        }
+    }
+}
+.burger{
+    display: none;
+    @media (max-width: $bp4 + px) {
+        @include adaptiv-value("margin-left", 32 , 15 , 1 );
+        position: relative;
+        display: block;
+        flex: 0 0 30px;
+        height: 18px;
+        cursor: pointer;
+        z-index: 5;
+        background-color: transparent;
+        border: 0;
+        span{
+            transition: all 0.3s ease 0s;
+            top: calc(50% - 1px);
+            left: 0px;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #000;
+            &:first-child{
+                top: 0px;
+            }
+            &:last-child{
+                top: auto;
+                bottom: 0;
+            }
+        }
+        &.active{
+            span{
+                transform: scale(0);
+                &:first-child{
+                    transform: rotate(-45deg);
+                    top: calc(50% - 1px);
+                }
+                &:last-child{
+                    transform: rotate(45deg);
+                    bottom: calc(50% - 1px);
+                }
+            }
+        }
+    }
+}
+
